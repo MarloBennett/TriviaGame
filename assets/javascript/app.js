@@ -2,7 +2,7 @@
 //var questions = [question1, question2, question3, question4];
 
 //put each question in a variable (all necessary html elements)
-var question1 = "<div id='firstQuestion'><p>Which of the following animals are Hogwarts students not allowed to bring to school as a pet?</p> <ul id='trivia'> <li> <input type='radio' name='ques' value='incorrect'> Cat </li> <li> <input type='radio' name='ques' value='incorrect'> Rat</li> <li> <input type='radio' name='ques' value='correct' id='yes'> Bat</li> <li><input type='radio' name='ques' value='incorrect'> Owl </li> </ul></div>";
+var question1 = "<div id='firstQuestion'><p>Which of the following animals are Hogwarts students not allowed to bring to school as a pet?</p> <ul id='trivia'> <li class='ques' class='no'>Cat</li> <li class='no' class='ques'>Rat</li> <li class='yes' class='ques'>Bat</li> <li class='no' class='ques'>Owl</li> </ul></div>";
 
 var question2 = "<div id='secondQuestion'><p>Which magical creature rescued Harry, Hermione, Ron, Luna, Dean Thomas, and Mr. Olivander from the Malfoys' basement?</p> <input type='radio' name='q2' value='correct'>Dobby the house elf<br /> <input type='radio' name='q2' value='incorrect'>Winky the house elf<br /> <input type='radio' name='q2' value='incorrect'>Buckbeak the thestral<br /> <input type='radio' name='q2' value='incorrect'>The giant squid</div>";
 
@@ -33,21 +33,32 @@ function showQuestions() {
 		$("#game").append(question1);
 	}
 
-	$("#trivia").on("click", function(event) {
-		var answerChoice = $("#yes").checked;
-		if (answerChoice) {
-			correctAnswers++;
-			$("#game").append("<div id='youreCorrect'><h5>That's right!</h5></div>")
-		}
+	$(".yes").on("click", function(event) {
+
+	$("#game").append("<div id='youreCorrect'><h5>That's right!</h5></div>")
+	correctAnswers++;
+	$(".yes").off("click");
+	$(".no").off("click");
+		})
+
+	$(".no").on("click", function(event) {
+
+	$("#game").append("<div id='youreCorrect'><h5>That's wrong! The correct answer is " + "" + ".</h5></div>")
+	incorrectAnswers++;
+	$(".yes").off("click");
+	$(".no").off("click");
+		})
+
+	}
 	})
-}
 
 
 
 
 
 
-})
+
+
 //each question must:
 //start the timer
 //on click (radio buttons) to determine which answer has been selected. 
