@@ -148,6 +148,21 @@ function showQuestions() {
 		answerIs = "They are dentists";
 		responses();
 	}
+
+	if (correctAnswers + incorrectAnswers + unansweredQuestions === 15) {
+		if (correctAnswers === 15) {
+			$("#game").append("<div class='results'><h5>Correct answers: " + correctAnswers + "</h5> <h5>Incorrect answers: " + incorrectAnswers + "</h5> <h5>Unanswered questions: " + unansweredQuestions + "</h5> <h5>Nice job! You must be ready for your OWLs!</h5></div>");
+			$("#theCount").remove();
+		}
+		else if (correctAnswers > 10) {
+			$("#game").append("<div class='results'><h5>Correct answers: " + correctAnswers + "</h5> <h5>Incorrect answers: " + incorrectAnswers + "</h5> <h5>Unanswered questions: " + unansweredQuestions + "</h5> <h5>Not bad, but you may want to study a little harder.</h5></div>");
+			$("#theCount").remove();
+		}
+		else {
+			$("#game").append("<div class='results'><h5>Correct answers: " + correctAnswers + "</h5> <h5>Incorrect answers: " + incorrectAnswers + "</h5> <h5>Unanswered questions: " + unansweredQuestions + "</h5> <h5>Uh oh. You may have to repeat this year.</h5></div>");
+			$("#theCount").remove();
+		}
+	}
 //end of show questions function
 }
 
@@ -200,6 +215,8 @@ function responses() {
 
 		console.log("incorrect " + incorrectAnswers);
 	})
+
+
 //end of reponses function
 }
 
@@ -213,7 +230,5 @@ function responses() {
 })
 
 
-//add rest of questions
-//after last question (if correct + incorect + unanswered = 20), show total results
 //include restart game option
 //style
