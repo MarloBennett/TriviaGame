@@ -15,7 +15,7 @@ var question7 = "<div id='seventhQuestion' class='triviaQ'><p>Which of the follo
 
 var question8 = "<div id='eighthQuestion' class='triviaQ'><p>Which ghost invited Harry to a Death Day party?</p> <ul id='trivia'> <li class='no'>The Fat Friar</li> <li class='yes'>Nearly Headless Nick</li> <li class='no'>The Grey Lady</li> <li class='no'>Peeves</li> </ul></div>";
 
-var question9 = "<div id='ninthQuestion' class='triviaQ'><p>When Hermione solves Snape's potions puzzle on the way to finding the Sorcerer's Stone, she says that it requires what thing that most wizards haven't got an oounce of?</p> <ul id='trivia'> <li class='no'>Magic</li> <li class='no'>Common sense</li> <li class='yes'>Logic</li> <li class='no'>Mathematical knowledge</li> </ul></div>";
+var question9 = "<div id='ninthQuestion' class='triviaQ'><p>When Hermione solves Snape's potions puzzle on the way to finding the Sorcerer's Stone, she says that it requires what thing that most wizards haven't got an ounce of?</p> <ul id='trivia'> <li class='no'>Magic</li> <li class='no'>Common sense</li> <li class='yes'>Logic</li> <li class='no'>Mathematical knowledge</li> </ul></div>";
 
 var question10 = "<div id='tenthQuestion' class='triviaQ'><p>Who finally delivers Harry's Hogwarts letter to him?</p> <ul id='trivia'> <li class='yes'>Hagrid</li> <li class='no'>Dumbledore</li> <li class='no'>Sirius Black</li> <li class='no'>Remus Lupin</li> </ul></div>";
 
@@ -27,7 +27,7 @@ var question13 = "<div id='thirteenthQuestion' class='triviaQ'><p>What is the na
 
 var question14 = "<div id='fourteenthQuestion' class='triviaQ'><p>What animal does Harry accidentially set on his cousin at the zoo?</p> <ul id='trivia'> <li class='yes'>Boa constrictor</li> <li class='no'>Lion</li> <li class='no'>Gorilla</li> <li class='no'>Wallaby</li> </ul></div>";
 
-var question15 = "<div id='fifteenthQuestion' class='triviaQ'><p>What do Hermione's parents do in the Muggle world?</p> <ul id='trivia'> <li class='no'>They're tax accountants.</li> <li class='no'>They're school teachers.</li> <li class='yes'>They're dentists.</li> <li class='no'>They're truck drivers.</li> </ul></div>";
+var question15 = "<div id='fifteenthQuestion' class='triviaQ'><p>What do Hermione's parents do in the Muggle world?</p> <ul id='trivia'> <li class='no'>They are tax accountants.</li> <li class='no'>They are school teachers.</li> <li class='yes'>They are dentists.</li> <li class='no'>They are truck drivers.</li> </ul></div>";
 
 
 var correctAnswers;
@@ -82,6 +82,72 @@ function showQuestions() {
 		answerIs = "The cloak of invisibility";
 		responses();
 	}
+
+	if (correctAnswers + incorrectAnswers + unansweredQuestions === 4) {
+		$("#game").append(question5);
+		answerIs = "Seeker";
+		responses();
+	}
+
+	if (correctAnswers + incorrectAnswers + unansweredQuestions === 5) {
+		$("#game").append(question6);
+		answerIs = "He Who Must Not Be Named";
+		responses();
+	}
+
+	if (correctAnswers + incorrectAnswers + unansweredQuestions === 6) {
+		$("#game").append(question7);
+		answerIs = "Godric Gryffindor's sword";
+		responses();
+	}
+
+	if (correctAnswers + incorrectAnswers + unansweredQuestions === 7) {
+		$("#game").append(question8);
+		answerIs = "Nearly Headless Nick";
+		responses();
+	}
+
+	if (correctAnswers + incorrectAnswers + unansweredQuestions === 8) {
+		$("#game").append(question9);
+		answerIs = "Logic";
+		responses();
+	}
+
+	if (correctAnswers + incorrectAnswers + unansweredQuestions === 9) {
+		$("#game").append(question10);
+		answerIs = "Hagrid";
+		responses();
+	}
+
+	if (correctAnswers + incorrectAnswers + unansweredQuestions === 10) {
+		$("#game").append(question11);
+		answerIs = "Gives it to Fred and George for their joke shop";
+		responses();
+	}
+
+	if (correctAnswers + incorrectAnswers + unansweredQuestions === 11) {
+		$("#game").append(question12);
+		answerIs = "Ferret";
+		responses();
+	}
+
+	if (correctAnswers + incorrectAnswers + unansweredQuestions === 12) {
+		$("#game").append(question13);
+		answerIs = "Aragog";
+		responses();
+	}
+
+	if (correctAnswers + incorrectAnswers + unansweredQuestions === 13) {
+		$("#game").append(question14);
+		answerIs = "Boa constrictor";
+		responses();
+	}
+
+	if (correctAnswers + incorrectAnswers + unansweredQuestions === 14) {
+		$("#game").append(question15);
+		answerIs = "They are dentists";
+		responses();
+	}
 //end of show questions function
 }
 
@@ -92,7 +158,7 @@ function responses() {
 //set interval to make countdown happen each second
 	var timerNum = setInterval(countdown, 1000);
 
-	$("#timer").html("<div id='theCount'><h5>Time left: " + timeLeft + "</h5></div>");
+	$("#timer").html("<div id='theCount'><h5>Time Remaining: " + timeLeft + "</h5></div>");
 
 	function countdown() {
 		if (timeLeft < 0) {
