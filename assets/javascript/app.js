@@ -34,6 +34,7 @@ function showQuestions() {
 	$("#youreCorrect").remove();
 	$("#youreWrong").remove();
 	$(".triviaQ").remove();
+	$("#noAnswer").remove();
 
 //painfully long code to bring in the next question. maybe a better way to do this.
 	if (correctAnswers + incorrectAnswers + unansweredQuestions === 0) {
@@ -64,8 +65,33 @@ function showQuestions() {
 
 function responses() {
 
+//set countdown to starting time
+	var timeLeft = 25;
+//set interval to make countdown happen each second
+	var timerNum = setInterval(countdown, 1000);
+
+	$("#timer").html("<div id='theCount'><h5>Time left: " + timeLeft + "</h5></div>");
+
+	function countdown() {
+		if (timeLeft < 0) {
+			clearInterval(timerNum);
+			$("#game").append("<div id='noAnswer'><h5>Sorry, your time is up! The answer was " + answerIs + ".</h5></div>")
+			$(".yes").off("click");
+			$(".no").off("click");
+			unansweredQuestions++;
+			setTimeout(showQuestions, 3000);
+
+			console.log("unanswered questions: " + unansweredQuestions);
+		}
+		else {
+			$("#timer").html("<div id='theCount'><h5>Time left: " + timeLeft + "</h5></div>");
+			timeLeft--;
+		}
+	}
+
 	$(".yes").on("click", function(event) {
 
+		clearInterval(timerNum);
 		$("#game").append("<div id='youreCorrect'><h5>That's right!</h5></div>")
 		correctAnswers++;
 		$(".yes").off("click");
@@ -77,6 +103,7 @@ function responses() {
 
 	$(".no").on("click", function(event) {
 
+		clearInterval(timerNum);
 		$("#game").append("<div id='youreWrong'><h5>Sorry, the correct answer is " + answerIs + ".</h5></div>")
 		incorrectAnswers++;
 		$(".yes").off("click");
@@ -87,6 +114,9 @@ function responses() {
 	})
 //end of reponses function
 }
+
+
+
 	
 
 
@@ -95,14 +125,7 @@ function responses() {
 })
 
 
-
-
-
-
-
-
-//each question must:
-//start the timer
-//if time runs out, dislay message that time is up and increment unanswered questions
+//add rest of questions
 //after last question (if correct + incorect + unanswered = 20), show total results
 //include restart game option
+//style
