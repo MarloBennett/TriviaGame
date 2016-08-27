@@ -21,7 +21,7 @@ var question10 = "<div id='tenthQuestion' class='triviaQ'><p>Who finally deliver
 
 var question11 = "<div id='eleventhQuestion' class='triviaQ'><p>What does Harry do with his Triwizard Tournament winnings?</p> <ul id='trivia'> <li class='no'>Invests it in magical stocks</li> <li class='yes'>Gives it to Fred and George for their joke shop</li> <li class='no'>Gives it to Ron to help with tuition</li> <li class='no'>Journeys abroad to learn more about international wizard culture</li> </ul></div>";
 
-var question12 = "<div id='twelfthQuestion' class='triviaQ'><p>What animal does Professor Moody turn Draco Malfy into after Draco tries to attack Harry when his back is turned?</p> <ul id='trivia'> <li class='no'>Rabbit</li> <li class='no'>Toad</li> <li class='no'>Dog</li> <li class='yes'>Ferret</li> </ul></div>";
+var question12 = "<div id='twelfthQuestion' class='triviaQ'><p>What animal does Professor Moody turn Draco Malfoy into after Draco tries to attack Harry when his back is turned?</p> <ul id='trivia'> <li class='no'>Rabbit</li> <li class='no'>Toad</li> <li class='no'>Dog</li> <li class='yes'>Ferret</li> </ul></div>";
 
 var question13 = "<div id='thirteenthQuestion' class='triviaQ'><p>What is the name of the gigantic spider that lives in the Forbidden Forest?</p> <ul id='trivia'> <li class='no'>Aragorn</li> <li class='no'>Bane</li> <li class='yes'>Aragog</li> <li class='no'>Norbert</li> </ul></div>";
 
@@ -34,6 +34,7 @@ var correctAnswers;
 var incorrectAnswers;
 var unansweredQuestions;
 var answerIs;
+var timerNum;
 
 
 $(document).ready(function() {
@@ -45,6 +46,10 @@ function initializeNewGame() {
 	correctAnswers = 0;
 	incorrectAnswers = 0;
  	unansweredQuestions = 0;
+
+ 	$(".results").remove();
+
+ 	clearInterval(timerNum);
 
  	showQuestions();
 
@@ -151,17 +156,14 @@ function showQuestions() {
 	if (correctAnswers + incorrectAnswers + unansweredQuestions === 15) {
 		if (correctAnswers === 15) {
 			$("#game").append("<div class='results'><h5>Correct answers: " + correctAnswers + "</h5> <h5>Incorrect answers: " + incorrectAnswers + "</h5> <h5>Unanswered questions: " + unansweredQuestions + "</h5> <h5>Nice job! You must be ready for your OWLs!</h5></div>");
-			$("#game").append("<div class='newGame'><h4>Restart</h4></div>");
 			$("#theCount").remove();
 		}
 		else if (correctAnswers > 10) {
 			$("#game").append("<div class='results'><h5>Correct answers: " + correctAnswers + "</h5> <h5>Incorrect answers: " + incorrectAnswers + "</h5> <h5>Unanswered questions: " + unansweredQuestions + "</h5> <h5>Not bad, but you may want to study a little harder.</h5></div>");
-			$("#game").append("<div class='newGame'><h4>Restart</h4></div>");
 			$("#theCount").remove();
 		}
 		else {
 			$("#game").append("<div class='results'><h5>Correct answers: " + correctAnswers + "</h5> <h5>Incorrect answers: " + incorrectAnswers + "</h5> <h5>Unanswered questions: " + unansweredQuestions + "</h5> <h5>Not great. You may have to repeat this year.</h5></div>");
-			$("#game").append("<div class='newGame'><h4>Restart</h4></div>");
 			$("#theCount").remove();
 		}
 	}
@@ -173,7 +175,7 @@ function responses() {
 //set countdown to starting time
 	var timeLeft = 25;
 //set interval to make countdown happen each second
-	var timerNum = setInterval(countdown, 1000);
+	timerNum = setInterval(countdown, 1000);
 
 	$("#timer").html("<div id='theCount'><h5>Time Remaining: " + timeLeft + "</h5></div>");
 
@@ -220,14 +222,16 @@ function responses() {
 
 		console.log("incorrect " + incorrectAnswers);
 	})
-//end of reponses function
-}
 
-$(".newGame").on("click", function(event) {
-	clearInterval(timerNum);
+	$(".newGame").on("click", function(event) {
+	//clearInterval(timerNum);
 	$("#results").remove();
 	initializeNewGame();
 })
+//end of reponses function
+}
+
+
 
 	
 
