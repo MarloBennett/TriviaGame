@@ -1,5 +1,5 @@
 
-var question1 = "<div id='firstQuestion' class='triviaQ'><p>Which of the following animals are Hogwarts students NOT allowed to bring to school as a pet?</p> <ul id='trivia'> <li class='no'>Cat</li> <li class='no'>Rat</li> <li class='yes'>Bat</li> <li class='no'>Owl</li> </ul></div>";
+var question1 = "<div id='firstQuestion' class='triviaQ' value='bat'><p>Which of the following animals are Hogwarts students NOT allowed to bring to school as a pet?</p> <ul id='trivia'> <li class='no'>Cat</li> <li class='no'>Rat</li> <li class='yes'>Bat</li> <li class='no'>Owl</li> </ul></div>";
 
 var question2 = "<div id='secondQuestion' class='triviaQ'><p>Which magical creature rescued Harry, Hermione, Ron, Luna, Dean Thomas, and Mr. Olivander from the Malfoys' basement?</p> <ul id='trivia'> <li class='yes'>Dobby the house elf</li> <li class='no'>Buckbeak the thestral</li> <li class='no'>Winky the house elf</li> <li class='no'>The giant squid</li> </ul></div>";
 
@@ -25,7 +25,7 @@ var question12 = "<div id='twelfthQuestion' class='triviaQ'><p>What animal does 
 
 var question13 = "<div id='thirteenthQuestion' class='triviaQ'><p>What is the name of the gigantic spider that lives in the Forbidden Forest?</p> <ul id='trivia'> <li class='no'>Aragorn</li> <li class='no'>Bane</li> <li class='yes'>Aragog</li> <li class='no'>Norbert</li> </ul></div>";
 
-var question14 = "<div id='fourteenthQuestion' class='triviaQ'><p>What animal does Harry accidentially set on his cousin at the zoo?</p> <ul id='trivia'> <li class='yes'>Boa constrictor</li> <li class='no'>Lion</li> <li class='no'>Gorilla</li> <li class='no'>Wallaby</li> </ul></div>";
+var question14 = "<div id='fourteenthQuestion' class='triviaQ'><p>What animal does Harry accidentally set on his cousin at the zoo?</p> <ul id='trivia'> <li class='yes'>Boa constrictor</li> <li class='no'>Lion</li> <li class='no'>Gorilla</li> <li class='no'>Wallaby</li> </ul></div>";
 
 var question15 = "<div id='fifteenthQuestion' class='triviaQ'><p>What do Hermione's parents do in the Muggle world?</p> <ul id='trivia'> <li class='no'>They are tax accountants.</li> <li class='no'>They are school teachers.</li> <li class='yes'>They are dentists.</li> <li class='no'>They are truck drivers.</li> </ul></div>";
 
@@ -58,10 +58,9 @@ function showQuestions() {
 	$(".triviaQ").remove();
 	$("#noAnswer").remove();
 
-//painfully long code to bring in the next question. maybe a better way to do this.
 	if (correctAnswers + incorrectAnswers + unansweredQuestions === 0) {
 		$("#game").append(question1);
-		answerIs = "Bat";
+		answerIs = "bat";
 		responses();
 	}
 
@@ -79,13 +78,13 @@ function showQuestions() {
 
 	if (correctAnswers + incorrectAnswers + unansweredQuestions === 3) {
 		$("#game").append(question4);
-		answerIs = "The cloak of invisibility";
+		answerIs = "the cloak of invisibility";
 		responses();
 	}
 
 	if (correctAnswers + incorrectAnswers + unansweredQuestions === 4) {
 		$("#game").append(question5);
-		answerIs = "Seeker";
+		answerIs = "seeker";
 		responses();
 	}
 
@@ -109,7 +108,7 @@ function showQuestions() {
 
 	if (correctAnswers + incorrectAnswers + unansweredQuestions === 8) {
 		$("#game").append(question9);
-		answerIs = "Logic";
+		answerIs = "logic";
 		responses();
 	}
 
@@ -121,13 +120,13 @@ function showQuestions() {
 
 	if (correctAnswers + incorrectAnswers + unansweredQuestions === 10) {
 		$("#game").append(question11);
-		answerIs = "Gives it to Fred and George for their joke shop";
+		answerIs = "gives it to Fred and George for their joke shop";
 		responses();
 	}
 
 	if (correctAnswers + incorrectAnswers + unansweredQuestions === 11) {
 		$("#game").append(question12);
-		answerIs = "Ferret";
+		answerIs = "ferret";
 		responses();
 	}
 
@@ -139,31 +138,34 @@ function showQuestions() {
 
 	if (correctAnswers + incorrectAnswers + unansweredQuestions === 13) {
 		$("#game").append(question14);
-		answerIs = "Boa constrictor";
+		answerIs = "boa constrictor";
 		responses();
 	}
 
 	if (correctAnswers + incorrectAnswers + unansweredQuestions === 14) {
 		$("#game").append(question15);
-		answerIs = "They are dentists";
+		answerIs = "they are dentists";
 		responses();
 	}
 
 	if (correctAnswers + incorrectAnswers + unansweredQuestions === 15) {
 		if (correctAnswers === 15) {
 			$("#game").append("<div class='results'><h5>Correct answers: " + correctAnswers + "</h5> <h5>Incorrect answers: " + incorrectAnswers + "</h5> <h5>Unanswered questions: " + unansweredQuestions + "</h5> <h5>Nice job! You must be ready for your OWLs!</h5></div>");
+			$("#game").append("<div class='newGame'><h4>Restart</h4></div>");
 			$("#theCount").remove();
 		}
 		else if (correctAnswers > 10) {
 			$("#game").append("<div class='results'><h5>Correct answers: " + correctAnswers + "</h5> <h5>Incorrect answers: " + incorrectAnswers + "</h5> <h5>Unanswered questions: " + unansweredQuestions + "</h5> <h5>Not bad, but you may want to study a little harder.</h5></div>");
+			$("#game").append("<div class='newGame'><h4>Restart</h4></div>");
 			$("#theCount").remove();
 		}
 		else {
-			$("#game").append("<div class='results'><h5>Correct answers: " + correctAnswers + "</h5> <h5>Incorrect answers: " + incorrectAnswers + "</h5> <h5>Unanswered questions: " + unansweredQuestions + "</h5> <h5>Uh oh. You may have to repeat this year.</h5></div>");
+			$("#game").append("<div class='results'><h5>Correct answers: " + correctAnswers + "</h5> <h5>Incorrect answers: " + incorrectAnswers + "</h5> <h5>Unanswered questions: " + unansweredQuestions + "</h5> <h5>Not great. You may have to repeat this year.</h5></div>");
+			$("#game").append("<div class='newGame'><h4>Restart</h4></div>");
 			$("#theCount").remove();
 		}
 	}
-//end of show questions function
+//end of initalize new game function
 }
 
 function responses() {
@@ -179,15 +181,16 @@ function responses() {
 		if (timeLeft < 0) {
 			clearInterval(timerNum);
 			$("#game").append("<div id='noAnswer'><h5>Sorry, your time is up! The answer was " + answerIs + ".</h5></div>")
-			$(".yes").off("click");
-			$(".no").off("click");
+			//$(".yes").off("click");
+			//$(".no").off("click");
+			$("li").off("click");
 			unansweredQuestions++;
 			setTimeout(showQuestions, 3000);
 
 			console.log("unanswered questions: " + unansweredQuestions);
 		}
 		else {
-			$("#timer").html("<div id='theCount'><h5>Time left: " + timeLeft + "</h5></div>");
+			$("#timer").html("<div id='theCount'><h5>Time Remaining: " + timeLeft + "</h5></div>");
 			timeLeft--;
 		}
 	}
@@ -197,8 +200,9 @@ function responses() {
 		clearInterval(timerNum);
 		$("#game").append("<div id='youreCorrect'><h5>That's right!</h5></div>")
 		correctAnswers++;
-		$(".yes").off("click");
-		$(".no").off("click");
+	//	$(".yes").off("click");
+	//	$(".no").off("click");
+	$("li").off("click");
 		setTimeout(showQuestions, 3000);
 
 		console.log("correct " + correctAnswers);
@@ -209,18 +213,21 @@ function responses() {
 		clearInterval(timerNum);
 		$("#game").append("<div id='youreWrong'><h5>Sorry, the correct answer is " + answerIs + ".</h5></div>")
 		incorrectAnswers++;
-		$(".yes").off("click");
-		$(".no").off("click");
+		//$(".yes").off("click");
+		//$(".no").off("click");
+		$("li").off("click");
 		setTimeout(showQuestions, 3000);
 
 		console.log("incorrect " + incorrectAnswers);
 	})
-
-
 //end of reponses function
 }
 
-
+$(".newGame").on("click", function(event) {
+	clearInterval(timerNum);
+	$("#results").remove();
+	initializeNewGame();
+})
 
 	
 
