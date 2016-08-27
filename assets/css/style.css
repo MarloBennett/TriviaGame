@@ -1,3 +1,30 @@
-li {
-	font-size: 16px;
+body {
+	background-image: url("../images/spooky-tree-background.jpg ");
+	color: rgb(232, 194, 39);
+}
+
+h1 {
+	font-family: 'Berkshire Swash', cursive;
+	text-align: center;
+	font-size: 70px;
+	
+}
+
+li, p, h4, h5 {
+	font-size: 20px;
+	font-family: 'Acme', sans-serif;
+	letter-spacing: 1px;
+}
+
+.main {
+	background-color: rgb(132, 85, 163); opacity: 0.8;
+	padding: 25px;
+	border-radius: 20px;
+	margin-top: 50px;
+}
+
+button {
+	background-color: rgb(88, 29, 128);
+	padding: 10px;
+
 }
