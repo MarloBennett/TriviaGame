@@ -23,7 +23,7 @@ var question11 = "<div id='eleventhQuestion' class='triviaQ'><p>What does Harry 
 
 var question12 = "<div id='twelfthQuestion' class='triviaQ'><p>What animal does Professor Moody turn Draco Malfoy into after Draco tries to attack Harry when his back is turned?</p> <ul id='trivia'> <li class='no'>Rabbit</li> <li class='no'>Toad</li> <li class='no'>Dog</li> <li class='yes'>Ferret</li> </ul></div>";
 
-var question13 = "<div id='thirteenthQuestion' class='triviaQ'><p>What is the name of the gigantic spider that lives in the Forbidden Forest?</p> <ul id='trivia'> <li class='no'>Aragorn</li> <li class='no'>Bane</li> <li class='yes'>Aragog</li> <li class='no'>Norbert</li> </ul></div>";
+var question13 = "<div id='thirteenthQuestion' class='triviaQ'><p>What is the name of the gigantic spider that Hagrid raised and released into the Forbidden Forest?</p> <ul id='trivia'> <li class='no'>Aragorn</li> <li class='no'>Bane</li> <li class='yes'>Aragog</li> <li class='no'>Norbert</li> </ul></div>";
 
 var question14 = "<div id='fourteenthQuestion' class='triviaQ'><p>What animal does Harry accidentally set on his cousin at the zoo?</p> <ul id='trivia'> <li class='yes'>Boa constrictor</li> <li class='no'>Lion</li> <li class='no'>Gorilla</li> <li class='no'>Wallaby</li> </ul></div>";
 
@@ -65,90 +65,120 @@ function showQuestions() {
 
 	if (correctAnswers + incorrectAnswers + unansweredQuestions === 0) {
 		$("#game").append(question1);
+		$(".sidebar").remove();
+		$(".picture").append("<div class='pic'><img src='assets/images/gryffcrest.png' class='sidebar' /></div>");
 		answerIs = "bat";
 		responses();
 	}
 
 	if (correctAnswers + incorrectAnswers + unansweredQuestions === 1) {
 		$("#game").append(question2);
+		$(".sidebar").remove();
+		$(".picture").append("<div class='pic'><img src='assets/images/luna.jpg' class='sidebar' /></div>");
 		answerIs = "Dobby the house elf";
 		responses();
 	}
 	
 	if (correctAnswers + incorrectAnswers + unansweredQuestions === 2) {
 		$("#game").append(question3);
+		$(".sidebar").remove();
+		$(".picture").append("<div class='pic'><img src='assets/images/trio.jpg' class='sidebar' /></div>");
 		answerIs = "Harry Potter and the Cursed Child";
 		responses();
 	}
 
 	if (correctAnswers + incorrectAnswers + unansweredQuestions === 3) {
 		$("#game").append(question4);
+		$(".sidebar").remove();
+		$(".picture").append("<div class='pic'><img src='assets/images/Hallows_Sign.svg' class='sidebar' /></div>");
 		answerIs = "the cloak of invisibility";
 		responses();
 	}
 
 	if (correctAnswers + incorrectAnswers + unansweredQuestions === 4) {
 		$("#game").append(question5);
+		$(".sidebar").remove();
+		$(".picture").append("<div class='pic'><img src='assets/images/quidditch.jpg' class='sidebar' /></div>");
 		answerIs = "seeker";
 		responses();
 	}
 
 	if (correctAnswers + incorrectAnswers + unansweredQuestions === 5) {
 		$("#game").append(question6);
+		$(".sidebar").remove();
+		$(".picture").append("<div class='pic'><img src='assets/images/voldemort.jpg' class='sidebar' /></div>");
 		answerIs = "He Who Must Not Be Named";
 		responses();
 	}
 
 	if (correctAnswers + incorrectAnswers + unansweredQuestions === 6) {
 		$("#game").append(question7);
+		$(".sidebar").remove();
+		$(".picture").append("<div class='pic'><img src='assets/images/locket.jpg' class='sidebar' /></div>");
 		answerIs = "Godric Gryffindor's sword";
 		responses();
 	}
 
 	if (correctAnswers + incorrectAnswers + unansweredQuestions === 7) {
 		$("#game").append(question8);
+		$(".sidebar").remove();
+		$(".picture").append("<div class='pic'><img src='assets/images/death.jpg' class='sidebar' /></div>");
 		answerIs = "Nearly Headless Nick";
 		responses();
 	}
 
 	if (correctAnswers + incorrectAnswers + unansweredQuestions === 8) {
 		$("#game").append(question9);
+		$(".sidebar").remove();
+		$(".picture").append("<div class='pic'><img src='assets/images/trio2.jpg' class='sidebar' /></div>");
 		answerIs = "logic";
 		responses();
 	}
 
 	if (correctAnswers + incorrectAnswers + unansweredQuestions === 9) {
 		$("#game").append(question10);
+		$(".sidebar").remove();
+		$(".picture").append("<div class='pic'><img src='assets/images/hogwarts.jpg' class='sidebar' /></div>");
 		answerIs = "Hagrid";
 		responses();
 	}
 
 	if (correctAnswers + incorrectAnswers + unansweredQuestions === 10) {
 		$("#game").append(question11);
+		$(".sidebar").remove();
+		$(".picture").append("<div class='pic'><img src='assets/images/harry2.jpg' class='sidebar' /></div>");
 		answerIs = "gives it to Fred and George for their joke shop";
 		responses();
 	}
 
 	if (correctAnswers + incorrectAnswers + unansweredQuestions === 11) {
 		$("#game").append(question12);
+		$(".sidebar").remove();
+		$(".picture").append("<div class='pic'><img src='assets/images/draco.jpg' class='sidebar' /></div>");
 		answerIs = "ferret";
 		responses();
 	}
 
 	if (correctAnswers + incorrectAnswers + unansweredQuestions === 12) {
 		$("#game").append(question13);
+		$(".sidebar").remove();
+		$(".picture").append("<div class='pic'><img src='assets/images/hagrid.jpg' class='sidebar' /></div>");
 		answerIs = "Aragog";
 		responses();
 	}
 
 	if (correctAnswers + incorrectAnswers + unansweredQuestions === 13) {
 		$("#game").append(question14);
+		$(".sidebar").remove();
+		$(".picture").append("<div class='pic'><img src='assets/images/owl.jpg' class='sidebar' /></div>");
 		answerIs = "boa constrictor";
 		responses();
 	}
 
 	if (correctAnswers + incorrectAnswers + unansweredQuestions === 14) {
 		$("#game").append(question15);
+		$(".sidebar").remove();
+		$(".picture").append("<div class='pic'><img src='assets/images/hermione.jpg' class='sidebar' /></div>");
 		answerIs = "they are dentists";
 		responses();
 	}
@@ -157,14 +187,17 @@ function showQuestions() {
 		if (correctAnswers === 15) {
 			$("#game").append("<div class='results'><h5>Correct answers: " + correctAnswers + "</h5> <h5>Incorrect answers: " + incorrectAnswers + "</h5> <h5>Unanswered questions: " + unansweredQuestions + "</h5> <h5>Nice job! You must be ready for your OWLs!</h5></div>");
 			$("#theCount").remove();
+			$(".sidebar").remove();
 		}
 		else if (correctAnswers > 10) {
 			$("#game").append("<div class='results'><h5>Correct answers: " + correctAnswers + "</h5> <h5>Incorrect answers: " + incorrectAnswers + "</h5> <h5>Unanswered questions: " + unansweredQuestions + "</h5> <h5>Not bad, but you may want to study a little harder.</h5></div>");
 			$("#theCount").remove();
+			$(".sidebar").remove();
 		}
 		else {
 			$("#game").append("<div class='results'><h5>Correct answers: " + correctAnswers + "</h5> <h5>Incorrect answers: " + incorrectAnswers + "</h5> <h5>Unanswered questions: " + unansweredQuestions + "</h5> <h5>Not great. You may have to repeat this year.</h5></div>");
 			$("#theCount").remove();
+			$(".sidebar").remove();
 		}
 	}
 //end of initalize new game function
@@ -202,9 +235,7 @@ function responses() {
 		clearInterval(timerNum);
 		$("#game").append("<div id='youreCorrect'><h5>That's right!</h5></div>")
 		correctAnswers++;
-	//	$(".yes").off("click");
-	//	$(".no").off("click");
-	$("li").off("click");
+		$("li").off("click");
 		setTimeout(showQuestions, 3000);
 
 		console.log("correct " + correctAnswers);
@@ -215,8 +246,6 @@ function responses() {
 		clearInterval(timerNum);
 		$("#game").append("<div id='youreWrong'><h5>Sorry, the correct answer is " + answerIs + ".</h5></div>")
 		incorrectAnswers++;
-		//$(".yes").off("click");
-		//$(".no").off("click");
 		$("li").off("click");
 		setTimeout(showQuestions, 3000);
 
@@ -224,7 +253,6 @@ function responses() {
 	})
 
 	$(".newGame").on("click", function(event) {
-	//clearInterval(timerNum);
 	$("#results").remove();
 	initializeNewGame();
 })

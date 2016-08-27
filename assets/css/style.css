@@ -7,7 +7,7 @@ h1 {
 	font-family: 'Berkshire Swash', cursive;
 	text-align: center;
 	font-size: 70px;
-	
+
 }
 
 li, p, h4, h5 {
@@ -27,4 +27,10 @@ button {
 	background-color: rgb(88, 29, 128);
 	padding: 10px;
 
+}
+
+.sidebar {
+	width: 95%;
+	margin-top: 50px;
+	margin-left: 5px;
 }
