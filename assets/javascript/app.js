@@ -267,7 +267,3 @@ function responses() {
 
 //end of doc ready function
 })
-
-
-//include restart game option
-//style
